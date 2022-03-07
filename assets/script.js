@@ -3,7 +3,7 @@ function generatePassword() {
 
   window.alert("Welcome to the password generator! Just a few questions to make your perfect password!")
 
-  passwordLength();
+  getPasswordLength();
 
   passwordQuestions();
 
@@ -12,6 +12,8 @@ function generatePassword() {
 function passwordQuestions() {
 
   var numConfirm = window.confirm("Do you want numbers in your password?");
+  var arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  console.log(arrayNum);
   if (numConfirm) {
     window.alert("Numbers will be added to your password.");
   } else {
@@ -19,6 +21,8 @@ function passwordQuestions() {
   }
 
   var specCharacter = window.confirm("Do you want special characters in your password?");
+  var arraySpecChar = ['!', '"', '#', '$', '%', '&', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~'];
+  console.log(arraySpecChar);
     if (specCharacter) {
       window.alert("Special characters will be added to your password.");
     } else {
@@ -26,6 +30,8 @@ function passwordQuestions() {
     }
 
   var lowCharacter = window.confirm("Do you want lowercase characters in your password?");
+  var arrayLow = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  console.log(arrayLow);
     if (lowCharacter) {
       window.alert("Lower case characters will be added to your password.");
     } else {
@@ -33,6 +39,8 @@ function passwordQuestions() {
     }
 
   var upCharacter = window.confirm("Do you want uppercase characters in your password?");
+  var arrayUp = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  console.log(arrayUp);
     if (upCharacter) {
       window.alert("Upper case characters will be added to your password.");
     } else {
@@ -46,12 +54,19 @@ function passwordQuestions() {
     }
 }
 
-var passwordLength = function() {
-  var promptLength = window.prompt("How long do you want your password to be? Choose a number between 8 and 128.");
-  if (promptLength === "" || promptLength === null || promptLength > 128 || promptLength < 8) {
-    window.alert("You need to provide a valid number! Please try again.");
-    return passwordLength();
+var getPasswordLength = function() {
+  var length = "";
+
+  while (length === "" || length === null || length > 128 || length < 8) {
+    length = prompt("How long do you want your password to be? Choose a number between 8 and 128.");
   }
+  console.log("Password length is " + length);
+  return length;
+  // else {
+  //   window.alert("You need to provide a valid number! Please try again.");
+  //   return getPasswordLength();
+  // }
+
 }
 
 
