@@ -6,12 +6,32 @@ function generatePassword() {
   passwordLength();
 
   var numConfirm = window.confirm("Do you want numbers in your password?");
+  if (numConfirm) {
+    window.alert("Numbers will be added to your password.");
+  } else {
+    window.alert("No numbers will be added to you password.")
+  }
 
   var specCharacter = window.confirm("Do you want special characters in your password?");
+    if (specCharacter) {
+      window.alert("Special characters will be added to your password.");
+    } else {
+      window.alert("No special characters will be added to your password.");
+    }
 
   var lowCharacter = window.confirm("Do you want lowercase characters in your password?");
+    if (lowCharacter) {
+      window.alert("Lower case characters will be added to your password.");
+    } else {
+      window.alert("Lower case characters will not be added to your password.");
+    }
 
   var upCharacter = window.confirm("Do you want uppercase characters in your password?");
+    if (upCharacter) {
+      window.alert("Upper case characters will be added to your password.");
+    } else {
+      window.alert("Upper case characters will not be added to your password.");
+    }
 }
 
 var passwordLength = function() {
@@ -21,6 +41,9 @@ var passwordLength = function() {
     return passwordLength();
   }
 }
+
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
