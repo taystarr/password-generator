@@ -5,6 +5,12 @@ function generatePassword() {
 
   passwordLength();
 
+  passwordQuestions();
+
+}
+
+function passwordQuestions() {
+
   var numConfirm = window.confirm("Do you want numbers in your password?");
   if (numConfirm) {
     window.alert("Numbers will be added to your password.");
@@ -32,6 +38,12 @@ function generatePassword() {
     } else {
       window.alert("Upper case characters will not be added to your password.");
     }
+    if (numConfirm || specCharacter || lowCharacter || upCharacter) {
+      window.alert("Making your perfect password...");
+    } else {
+    window.alert("You must choose at least one option! Please try again.");
+    return passwordQuestions();
+    }
 }
 
 var passwordLength = function() {
@@ -41,8 +53,6 @@ var passwordLength = function() {
     return passwordLength();
   }
 }
-
-
 
 
 // Get references to the #generate element
