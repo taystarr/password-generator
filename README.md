@@ -18,4 +18,4 @@
 
 ![alt text](assets/images/PGss.png)
 
-### Click [here] (https://taystarr.github.io/password-generator/) to view my password generator!
+### Click [here](https://taystarr.github.io/password-generator/) to view my password generator!
